@@ -1,5 +1,7 @@
 #!/bin/sh
 
-for file in .zshrc .tmux.conf .gitconfig; do
+files='.bash_profile .bashrc .vimrc .tmux.conf .gitconfig'
+
+for file in $files; do
 	(set -x; cp $file ~/$file)
 done
