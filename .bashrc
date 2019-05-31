@@ -8,7 +8,6 @@ export GOROOT='/usr/local/go'
 export GOPATH="$HOME/go"
 export PATH="$PATH:/usr/local/go/bin"
 
-export LC_ALL='en_GB.UTF-8'
 export TERM='xterm'
 export HISTCONTROL='ignoreboth'
 export HISTSIZE='10000'
