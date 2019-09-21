@@ -4,7 +4,7 @@ Shell, tmux, Vim, etc configurations.
 
 ## Installation
 
-Clone the repository and then run the build.sh script.
+Download a release or clone the repository and then run the build.sh script.
 
 ```
 $ ./build.sh 
