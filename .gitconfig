@@ -1,13 +1,14 @@
 [user]
-	email = paddynewman@gmail.com
-	name = Paddy Newman
+    email = paddynewman@gmail.com
+    name = Paddy Newman
 [alias]
-	co = checkout
-	ci = commit
-	st = status
-	br = branch
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    sh = show
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [push]
-	default = simple
+    default = simple
 [credential]
-	helper = cache --timeout=86400
+    helper = cache --timeout=86400
