@@ -14,7 +14,6 @@ export HISTSIZE='10000'
 
 export MANWIDTH='78'
 export MANOPT='--nj'
-export GREP_OPTIONS='--exclude-dir=.git'
 
 export GIT_PAGER='less -FRX'
 export PAGER='less'
@@ -33,6 +32,7 @@ alias tmux='tmux -2 attach || tmux -2'
 alias cal='cal -m'
 alias grep='egrep'
 alias more='less'
+alias cx='chmod +x'
 
 alias journalctl='sudo journalctl'
 alias systemctl='sudo systemctl'
