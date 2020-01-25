@@ -1,22 +1,24 @@
 PROMPT_COMMAND='echo -ne "\033]2$HOSTNAME:$PWD\007"'
 PS1='\[\033[1;33m\]\$\[\033[0m\] '
 
-set -o vi
 shopt -s histappend
+export HISTCONTROL='ignoreboth'
+export HISTSIZE='10000'
+
+set -o vi
 
 export GOROOT='/usr/local/go'
 export GOPATH="$HOME/go"
 export PATH="$PATH:/usr/local/go/bin"
 
 export TERM='xterm'
-export HISTCONTROL='ignoreboth'
-export HISTSIZE='10000'
 
 export MANWIDTH='78'
 export MANOPT='--nj'
 
 export GIT_PAGER='less -FRX'
 export PAGER='less'
+export LESS='-i'
 export EDITOR='vi'
 
 alias ls='ls -F'
