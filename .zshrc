@@ -1,8 +1,9 @@
 autoload -U colors && colors
 autoload -Uz compinit && compinit -i
 
-path=('/Users/paddy/python/bin' $path)
+path=("$HOME/python/bin" $path)
 PS1="%{$fg_bold[cyan]%}%#%{$reset_color%} "
+precmd () {print -Pn "\e]0;$USER:$PWD\a"}
 
 export HISTFILE=~/.zhistory
 export SAVEHIST=1000
