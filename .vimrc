@@ -1,5 +1,8 @@
+set t_Co=256
 set background=dark " who uses a white terminal?
 syntax on " disco lights on!
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox " https://github.com/morhetz/gruvbox
 
 set incsearch " highlight search strings interactively
 set hlsearch " highlight search string
@@ -16,6 +19,9 @@ set undodir=/tmp " keep these out of scm directories
 set wildignore+=*.un~ " ignore vim's persistent undo files
 set ignorecase " ignore case when searching
 set smartcase " don't ignore case when search contains capitals
+set formatoptions=tcq " don't get too smart for me
+
+filetype plugin on " look for filetype plugins in ~/.vim/ftplugin
 
 nnoremap <F1> :set ignorecase!<cr>
 nnoremap <F2> :set hlsearch!<cr>
@@ -23,6 +29,9 @@ nnoremap <F3> :set paste!<cr>
 nnoremap <F4> :set wrap!<cr>
 nnoremap <F5> :if exists("g:syntax_on") <bar> syntax off <bar> else <bar> syntax enable <bar> endif<cr>
 nnoremap <F6> :set cursorline!
+
+" Don't put the # character in the first column
+inoremap # X#
 
 " I often type "Q!" when I mean to type "q!".
 cnoremap Q! q!
