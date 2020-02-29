@@ -2,6 +2,14 @@
 
 files='.zshrc .vimrc .tmux.conf .gitconfig .gitignore .curlrc'
 
-for file in $files; do
-	(set -x; cp $file ~/$file)
-done
+if [ "X$1" = "X-u" ]; then
+    for file in $files; do
+        (set -x; cp ~/$file $file)
+    done
+    (set -x; cp -r ~/.vim .)
+else
+    for file in $files; do
+        (set -x; cp $file ~/$file)
+    done
+    (set -x; cp -r .vim ~)
+fi
