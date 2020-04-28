@@ -1,17 +1,12 @@
 PROMPT_COMMAND='echo -ne "\033]2$HOSTNAME:$PWD\007"'
 PS1='\[\033[1;33m\]\$\[\033[0m\] '
 
-shopt -s histappend
-export HISTCONTROL='ignoreboth'
-export HISTSIZE='10000'
-
 set -o vi
-
-export GOROOT='/usr/local/go'
-export GOPATH="$HOME/go"
-export PATH="$PATH:/usr/local/go/bin"
+shopt -s histappend
 
 export TERM='xterm'
+export HISTCONTROL='ignoreboth'
+export HISTSIZE='10000'
 
 export MANWIDTH='78'
 export MANOPT='--nj'
@@ -21,7 +16,7 @@ export PAGER='less'
 export LESS='-i'
 export EDITOR='vi'
 
-alias ls='ls -F'
+alias ls='ls --color=auto'
 alias sl='ls'
 alias ls-l='ls -l'
 alias sl-l='ls -l'
@@ -36,6 +31,7 @@ alias grep='egrep'
 alias more='less'
 alias cx='chmod +x'
 
+alias apt='sudo apt'
 alias journalctl='sudo journalctl'
 alias systemctl='sudo systemctl'
 

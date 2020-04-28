@@ -40,13 +40,20 @@ alias bc='bc -lq'
 alias tmux='tmux -2 attach || tmux -2'
 alias cx='chmod +x'
 alias p='python3'
+alias k='kubectl'
+alias d='docker'
+alias pods='watch -n5 -d kubectl get pods -o wide'
 
+alias apt='sudo apt'
 alias journalctl='sudo journalctl'
 alias systemctl='sudo systemctl'
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 mergemaster() {
     (set -x; git co master && git pull && git co - && git merge master)
 }
+
+source <(kubectl completion zsh)
 
 if [ -f ~/.workrc ]; then
     . ~/.workrc

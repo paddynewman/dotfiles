@@ -23,6 +23,8 @@ set formatoptions=tcq " don't get too smart for me
 
 filetype plugin on " look for filetype plugins in ~/.vim/ftplugin
 
+execute "set <M-m>=\em" | nnoremap <M-m> :make<cr>
+
 nnoremap <F1> :set ignorecase!<cr>
 nnoremap <F2> :set hlsearch!<cr>
 nnoremap <F3> :set paste!<cr>
