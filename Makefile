@@ -1,16 +1,12 @@
-FILES = .zshrc \
-	.bashrc \
-	.bash_profile \
-	.vimrc \
-	.tmux.conf \
-	.gitignore \
-	.gitconfig \
-	.curlrc
-
-DIRECTORIES = .vim
-
 all:
-	$(foreach file, $(FILES),cp ~/$(file) $(file);)
-	$(foreach directory, $(DIRECTORIES),cp -r ~/$(directory) .;)
-
+	cp ~/.zshrc .zshrc
+	cp ~/.bashrc .bashrc
+	cp ~/.bash_profile .bash_profile
+	cp ~/.vimrc .vimrc
+	cp ~/.tmux.conf .tmux.conf
+	cp ~/.gitignore .gitignore
+	cp ~/.gitconfig .gitconfig
+	cp ~/.curlrc .curlrc
+	mkdir -p .vim && cp -r ~/.vim .
+	mkdir -p .ssh && cp ~/.ssh/rc .ssh
 	rm .vim/.netrwhist
