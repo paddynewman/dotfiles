@@ -1,12 +1,25 @@
-all:
-	cp ~/.zshrc .zshrc
-	cp ~/.bashrc .bashrc
-	cp ~/.bash_profile .bash_profile
-	cp ~/.vimrc .vimrc
-	cp ~/.tmux.conf .tmux.conf
-	cp ~/.gitignore .gitignore
-	cp ~/.gitconfig .gitconfig
-	cp ~/.curlrc .curlrc
-	mkdir -p .vim && cp -r ~/.vim .
-	mkdir -p .ssh && cp ~/.ssh/rc .ssh
-	rm .vim/.netrwhist
+FILES = .zshrc \
+	.bashrc \
+	.bash_profile \
+	.vimrc \
+	.tmux.conf \
+	.gitignore \
+	.gitconfig \
+	.curlrc \
+	.ssh/rc
+
+DIRECTORIES = .vim
+
+update: files directories
+
+files:
+	for file in $(FILES); do \
+	    mkdir -p $$(dirname $$file); \
+	    cp -r ~/$$file $$file; \
+	done
+
+directories:
+	for directory in $(DIRECTORIES); do \
+	    mkdir -p $$(dirname $$directory); \
+	    cp -r ~/$$directory .; \
+	done
