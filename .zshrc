@@ -43,6 +43,7 @@ alias p='python3'
 alias k='kubectl'
 alias d='docker'
 alias pods='watch -n5 -d kubectl get pods -o wide'
+alias grep='grep --color=auto --exclude-dir=.git'
 
 alias apt='sudo apt'
 alias journalctl='sudo journalctl'
@@ -52,8 +53,6 @@ alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 mergemaster() {
     (set -x; git co master && git pull && git co - && git merge master)
 }
-
-source <(kubectl completion zsh)
 
 if [ -f ~/.workrc ]; then
     . ~/.workrc
