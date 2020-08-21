@@ -17,6 +17,7 @@ typeset -U path # Only keep unique items in the path/PATH list.
 path=(~/bin $path)
 
 PS1="%{$fg_bold[yellow]%}\$%{$reset_color%} " # Set a simple coloured prompt.
+PS4='+ ' # Zsh's default PS4 is a bit too verbose for my liking.
 precmd () {print -Pn "\e]0;$HOST:$PWD\a"} # Add more detail to the terminal window.
 
 bindkey '^R' history-incremental-search-backward # Backwards search on CTRL+R.
