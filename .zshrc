@@ -58,13 +58,16 @@ alias tmux='tmux -2 attach || tmux -2'
 alias cx='chmod +x'
 alias p='python3'
 alias grep='grep --color=auto --exclude-dir=.git'
+alias decomment="egrep -v '^\s*(#|$)'"
 
 alias apt='sudo apt'
 alias journalctl='sudo journalctl'
 alias systemctl='sudo systemctl'
 alias netstat='sudo netstat'
 alias lsof='sudo lsof'
+alias traceroute='sudo traceroute'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias adig='dig +noall +answer'
 
 mergemaster() {
     (set -x; git co master && git pull && git co - && git merge master)
