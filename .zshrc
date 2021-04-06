@@ -59,6 +59,7 @@ alias cx='chmod +x'
 alias p='python3'
 alias grep='grep --color=auto --exclude-dir=.git'
 alias decomment="egrep -v '^\s*(#|$)'"
+alias ipcalc='ipcalc -n'
 
 alias apt='sudo apt'
 alias journalctl='sudo journalctl'
@@ -68,6 +69,11 @@ alias lsof='sudo lsof'
 alias traceroute='sudo traceroute'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias adig='dig +noall +answer'
+
+gp() {
+    local _branch=$(git rev-parse --abbrev-ref HEAD)
+    (set -x; git push --set-upstream origin $_branch)
+}
 
 mergemaster() {
     (set -x; git co master && git pull && git co - && git merge master)
