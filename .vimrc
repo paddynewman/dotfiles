@@ -28,6 +28,11 @@ filetype plugin on " look for filetype plugins in ~/.vim/ftplugin
 
 execute "set <M-m>=\em" | nnoremap <M-m> :make<cr>
 
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
 nnoremap <F1> :set ignorecase!<cr>
 nnoremap <F2> :set hlsearch!<cr>
 nnoremap <F3> :set paste!<cr>
