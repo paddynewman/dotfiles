@@ -7,7 +7,7 @@
     ci = commit
     st = status
     sh = show
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lg = log --pretty=format:'%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)<%ae>%Creset' --abbrev-commit
 [push]
     default = simple
 [credential]
