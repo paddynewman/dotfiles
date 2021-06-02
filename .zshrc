@@ -32,6 +32,8 @@ setopt hist_reduce_blanks # Trim all the spaces before saving.
 setopt inc_append_history # Each shell will append to ~/.zhistory.
 setopt share_history # Each shell will share the same history.
 
+# PROMPT_EOL_MARK=''
+
 set -o vi # Vim-stype command line editing, not Emacs.
 
 export TERM='xterm'
@@ -58,6 +60,7 @@ alias tmux='tmux -2 attach || tmux -2'
 alias cx='chmod +x'
 alias p='python3'
 alias grep='grep --color=auto --exclude-dir=.git'
+alias gr='grep -r'
 alias decomment="egrep -v '^\s*(#|$)'"
 alias ipcalc='ipcalc -n'
 
@@ -68,6 +71,7 @@ alias netstat='sudo netstat'
 alias lsof='sudo lsof'
 alias traceroute='sudo traceroute'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias sdig='dig +short'
 alias adig='dig +noall +answer'
 
 gp() {
