@@ -3,9 +3,7 @@ FILES = .zshrc \
 	.bash_profile \
 	.vimrc \
 	.tmux.conf \
-	.gitignore \
 	.gitconfig \
-	.curlrc \
 	.ssh/rc
 
 DIRECTORIES = .vim

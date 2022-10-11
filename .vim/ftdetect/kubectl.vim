@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.kube/config set filetype=yaml
+autocmd BufNewFile,BufRead *.kube/config* set filetype=yaml
