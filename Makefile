@@ -4,6 +4,7 @@ FILES = .zshrc \
 	.vimrc \
 	.tmux.conf \
 	.gitconfig \
+	.gitignore \
 	.ssh/rc
 
 DIRECTORIES = .vim

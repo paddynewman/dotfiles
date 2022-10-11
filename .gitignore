@@ -1,4 +1,6 @@
 *.swp
 *.pyc
 *.pyo
+.terraform*
+terraform.tfstate.*
 .vim/.netrwhist
