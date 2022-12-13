@@ -13,12 +13,12 @@ update: files directories
 
 files:
 	for file in $(FILES); do \
-	    mkdir -p $$(dirname $$file); \
-	    cp -r ~/$$file $$file; \
+	    mkdir -pv $$(dirname $$file); \
+	    cp -rv ~/$$file $$file; \
 	done
 
 directories:
 	for directory in $(DIRECTORIES); do \
-	    mkdir -p $$(dirname $$directory); \
-	    cp -r ~/$$directory .; \
+	    mkdir -pv $$(dirname $$directory); \
+	    cp -rv ~/$$directory .; \
 	done

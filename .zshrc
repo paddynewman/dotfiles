@@ -7,6 +7,7 @@ autoload -Uz compinit && compinit -i # Enable autoloaded completion.
 bindkey "$key[Up]" history-beginning-search-backward
 bindkey "$key[Down]" history-beginning-search-forward
 bindkey '^R' history-incremental-search-backward # Like Bash does.
+bindkey '^O' copy-prev-shell-word # I end up using this all the time!
 
 typeset -U path # Only keep unique items in the path/PATH list.
 path=(~/bin $path) # I'll put examples and hacky stuff in ~/bin.
@@ -35,12 +36,13 @@ export PAGER='less'
 export LESS='-i'
 export EDITOR='vi'
 
-alias ls='ls -F'
+alias ls='ls -F --color=auto'
 alias ll='ls -lh'
 alias la='ll -a'
 
 alias vi='vim'
 alias rv='rview -'
+alias cal='ncal -bM'
 alias bc='bc -lq'
 alias tmux='tmux -2 attach || tmux -2'
 alias cx='chmod 755'
@@ -51,8 +53,7 @@ alias grep="grep --color=auto --exclude='*.swp' --exclude-dir=.git"
 alias decomment="egrep -v '^\s*(#|$)'"
 alias ipcalc='ipcalc -n'
 alias zreload='. ~/.zshrc'
-alias gup='(set -x; git co master && git pull)'
-alias aup='(set -x; apt update && apt upgrade -y && apt autoremove -y)'
+alias aup='(set -x; apt-get update && apt-get upgrade -y && apt-get autoremove -y)'
 alias myip='(set -x; curl httpbin.org/ip)'
 
 alias journalctl='sudo journalctl'
@@ -62,14 +63,20 @@ alias ss='sudo ss'
 alias lsof='sudo lsof'
 alias traceroute='sudo traceroute'
 alias apt='sudo apt'
+alias apt-get='sudo apt-get'
 alias iptables='sudo iptables'
 
-gp() {
+gp() { # Push a newly-created branch
     local _branch=$(git rev-parse --abbrev-ref HEAD)
     (set -x; git push --set-upstream origin $_branch)
 }
 
-mergemaster() {
+gup() { # Checkout and pull a branch
+    local _branch=$(git rev-parse --abbrev-ref HEAD)
+    (set -x; git co $_branch && git pull)
+}
+
+mergemaster() { # Merge a branch with master (what about main?)
     (set -x; git co master && git pull && git co - && git merge master)
 }
 
